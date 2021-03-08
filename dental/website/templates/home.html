@@ -1,10 +1,5 @@
 {% load static %}
 
-TEST
-{% static "website/img" %}
-<br>
-{% static "website/" %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +18,7 @@ TEST
 
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="{% static 'website/style.css' %}">
+  <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
 
 </head>
 
@@ -44,7 +39,7 @@ TEST
           <!-- Top Content -->
           <div class="col-6 col-md-9 col-lg-8">
             <div class="top-header-content">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="28 Jackson Street, Chicago, 7788569 USA"><i class="fa fa-map-marker"></i> <span>28 Jackson Street, Chicago, 7788569 USA</span></a>
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="33 Bond Street Austalia"><i class="fa fa-map-marker"></i> <span>33 Bond Street Austalia</span></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="info.dento@gmail.com"><i class="fa fa-envelope"></i> <span>info.dento@gmail.com</span></a>
             </div>
           </div>
@@ -71,7 +66,7 @@ TEST
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="index.html"><img src="./img/core-img/logo.png" alt=""></a>
+            <a class="nav-brand" href="index.html"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -89,16 +84,16 @@ TEST
               <!-- Nav Start -->
               <div class="classynav">
                 <ul id="nav">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="#">Pages</a>
                     <ul class="dropdown">
-                      <li><a href="index.html">- Home</a></li>
+                      <li><a href="{% url 'home' %}">- Home</a></li>
                       <li><a href="about.html">- About Us</a></li>
                       <li><a href="service.html">- Service</a></li>
                       <li><a href="pricing.html">- Pricing</a></li>
                       <li><a href="blog.html">- Blog</a></li>
                       <li><a href="blog-details.html">- Blog Details</a></li>
-                      <li><a href="contact.html">- Contact</a></li>
+                      <li><a href="{% url 'contact' %}">- Contact</a></li>
                       <li><a href="#">- Dropdown</a>
                         <ul class="dropdown">
                           <li><a href="#">- Dropdown Item</a></li>
@@ -125,7 +120,7 @@ TEST
                       <li><a href="blog-details.html">- Blog Details</a></li>
                     </ul>
                   </li>
-                  <li><a href="./contact.html">Contact</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
               </div>
               <!-- Nav End -->
@@ -307,7 +302,7 @@ TEST
               <!-- Single Service -->
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
-                  <img src="./img/core-img/s1.png" alt="">
+                  <img src="{% static 'website/img/core-img/s1.png' %}" alt="">
                   <h6>Teeth Whitening</h6>
                 </div>
               </div>
@@ -315,7 +310,7 @@ TEST
               <!-- Single Service -->
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
-                  <img src="./img/core-img/s2.png" alt="">
+                  <img src="{% static 'website/img/core-img/s2.png' %}" alt="">
                   <h6>Missing Teeth</h6>
                 </div>
               </div>
@@ -323,7 +318,7 @@ TEST
               <!-- Single Service -->
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
-                  <img src="./img/core-img/s3.png" alt="">
+                  <img src="{% static 'website/img/core-img/s3.png' %}" alt="">
                   <h6>Teeth Whitening</h6>
                 </div>
               </div>
@@ -331,7 +326,7 @@ TEST
               <!-- Single Service -->
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
-                  <img src="./img/core-img/s4.png" alt="">
+                  <img src="{% static 'website/img/core-img/s4.png' %}" alt="">
                   <h6>Cosmetic Dentistry</h6>
                 </div>
               </div>
@@ -339,7 +334,7 @@ TEST
               <!-- Single Service -->
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
-                  <img src="./img/core-img/s5.png" alt="">
+                  <img src="{% static 'website/img/core-img/s5.png' %}" alt="">
                   <h6>Examination</h6>
                 </div>
               </div>
@@ -347,7 +342,7 @@ TEST
               <!-- Single Service -->
               <div class="col-6 col-md-4">
                 <div class="single-service mb-70">
-                  <img src="./img/core-img/s1.png" alt="">
+                  <img src="{% static 'website/img/core-img/s1.png' %}" alt="">
                   <h6>Teeth Pain</h6>
                 </div>
               </div>
@@ -358,9 +353,8 @@ TEST
         <!-- Video Area -->
         <div class="col-12 col-lg-6">
           <div class="dento-video-area mb-100">
-            <img src="{% static 'website/img/bg-img/14.jpg' %}" alt="">
-            <!-- Play Button -->
-            <a href="#" class="video-play-button"><i class="fa fa-play" aria-hidden="true"></i></a>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/CfBIcSBZuGQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
           </div>
         </div>
       </div>
@@ -459,7 +453,7 @@ TEST
   <!-- Dento Pricing Table Area End -->
 
   <!-- Book An Oppointment Area Start -->
-  <section class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('img/bg-img/12.jpg');">
+  <section class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
     <div class="container">
       <div class="row">
         <!-- Section Heading -->
@@ -553,7 +547,7 @@ TEST
         <!-- Single Dentist Area -->
         <div class="col-12 col-sm-6 col-md-4">
           <div class="single-dentist-area mb-100">
-            <img src="./img/bg-img/9.png" alt="">
+            <img src="{% static 'website/img/bg-img/9.png' %}" alt="">
             <!-- Dentist Content -->
             <div class="dentist-content">
               <!-- Social Info -->
@@ -574,7 +568,7 @@ TEST
         <!-- Single Dentist Area -->
         <div class="col-12 col-sm-6 col-md-4">
           <div class="single-dentist-area mb-100">
-            <img src="./img/bg-img/10.png" alt="">
+            <img src="{% static 'website/img/bg-img/10.png' %}" alt="">
             <!-- Dentist Content -->
             <div class="dentist-content">
               <!-- Social Info -->
@@ -595,7 +589,7 @@ TEST
         <!-- Single Dentist Area -->
         <div class="col-12 col-sm-6 col-md-4">
           <div class="single-dentist-area mb-100">
-            <img src="./img/bg-img/11.png" alt="">
+            <img src="{% static 'website/img/bg-img/11.png' %}" alt="">
             <!-- Dentist Content -->
             <div class="dentist-content">
               <!-- Social Info -->
@@ -618,7 +612,7 @@ TEST
   <!-- ***** Dento Dentist Area End ***** -->
 
   <!-- ***** Testimonials Area Start ***** -->
-  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('img/bg-img/7.jpg');">
+  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url{% static 'website/img/bg-img/7.jpg' %});">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -628,7 +622,7 @@ TEST
             <div class="single-testimonial-slide d-flex align-items-center">
               <!-- Thumbnail -->
               <div class="testimonial-thumb">
-                <img src="./img/bg-img/8.jpg" alt="">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
               </div>
               <!-- Content -->
               <div class="testimonial-content">
@@ -643,7 +637,7 @@ TEST
             <div class="single-testimonial-slide d-flex align-items-center">
               <!-- Thumbnail -->
               <div class="testimonial-thumb">
-                <img src="./img/bg-img/8.jpg" alt="">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
               </div>
               <!-- Content -->
               <div class="testimonial-content">
@@ -658,7 +652,7 @@ TEST
             <div class="single-testimonial-slide d-flex align-items-center">
               <!-- Thumbnail -->
               <div class="testimonial-thumb">
-                <img src="./img/bg-img/8.jpg" alt="">
+                <img src="{% static 'website/img/bg-img/8.jpg' %}" alt="">
               </div>
               <!-- Content -->
               <div class="testimonial-content">
@@ -693,7 +687,7 @@ TEST
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
             <a href="./blog-details.html">
-              <img src="./img/bg-img/4.jpg" alt="">
+              <img src="{% static 'website/img/bg-img/4.jpg' %}" alt="">
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
@@ -711,7 +705,7 @@ TEST
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
             <a href="./blog-details.html">
-              <img src="./img/bg-img/5.jpg" alt="">
+              <img src="{% static 'website/img/bg-img/5.jpg' %}" alt="">
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
@@ -729,7 +723,7 @@ TEST
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
             <a href="./blog-details.html">
-              <img src="./img/bg-img/6.jpg" alt="">
+              <img src="{% static 'website/img/bg-img/6.jpg' %}" alt="">
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
@@ -748,13 +742,13 @@ TEST
   <!-- ***** Blog Area End ***** -->
 
   <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/3.jpg);">
+  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/3.jpg' %});">
     <div class="container">
       <div class="row">
         <!-- Single Footer Widget -->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="./img/core-img/logo.png" alt=""></a>
+            <a href="{% url 'home' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
             <p>Etiam sutor risus, dapibus act elefend katen, lacinia sitamet denim. Mauris sagittis kansa interdum dignissim.</p>
             <div class="footer-contact">
               <p><i class="icon_pin"></i> 28 Jackson Street, Chicago, 7788569 USA</p>
@@ -850,15 +844,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->
-  <script src="js/jquery.min.js"></script>
+  <script src="{% static 'website/js/jquery.min.js' %}"></script>
   <!-- Popper js -->
-  <script src="js/popper.min.js"></script>
+  <script src="{% static 'website/js/popper.min.js' %}"></script>
   <!-- Bootstrap js -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
   <!-- All js -->
-  <script src="js/dento.bundle.js"></script>
+  <script src="{% static 'website/js/dento.bundle.js' %}"></script>
   <!-- Active js -->
-  <script src="js/default-assets/active.js"></script>
+  <script src="{% static 'website/js/default-assets/active.js' %}"></script>
 
 </body>
 
